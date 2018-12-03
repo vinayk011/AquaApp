@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">AquaApp</string>
+    <string name="name">User name</string>
+    <string name="email">Email</string>
 </resources>
