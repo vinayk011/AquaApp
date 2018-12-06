@@ -2,4 +2,7 @@
     <string name="app_name">AquaApp</string>
     <string name="name">User name</string>
     <string name="email">Email</string>
+    <string name="add_transaction">Add Transaction</string>
+    <string name="signout">Sign out</string>
+    <string name="company_summary">Company summary</string>
 </resources>
