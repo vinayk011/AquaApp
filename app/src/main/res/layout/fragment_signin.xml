@@ -17,9 +17,9 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:clickable="true"
-        android:layout_margin="@dimen/_10sdp"
+        android:padding="@dimen/_10sdp"
         android:orientation="vertical"
-        android:background="@color/colorPrimaryDark">
+        android:background="@color/colorPrimaryTextDark">
 
         <ImageView
             android:layout_width="wrap_content"
@@ -57,16 +57,41 @@
             android:layout_width="match_parent"
             android:layout_height="@dimen/_20sdp" />
 
-        <com.google.android.material.button.MaterialButton
+        <FrameLayout
+            android:id="@+id/layout_login"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/_40sdp"
+            android:layout_marginRight="@dimen/_40sdp"
+            android:layout_gravity="center_horizontal"
+            android:background="@drawable/btn_transperant">
+
+            <TextView
+                android:id="@+id/btn_login"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/ripple_effect"
+                android:clickable="true"
+                android:gravity="center"
+                android:onClick="@{() -> callback.onClickSignIn()}"
+                android:padding="@dimen/_10sdp"
+                android:text="@string/sign_in"
+                android:textColor="@color/colorPrimaryText"
+                android:textAllCaps="false"
+                android:textSize="@dimen/_15sdp" />
+        </FrameLayout>
+
+
+        <!--<com.google.android.material.button.MaterialButton
             style="@style/button"
             android:layout_width="@dimen/_150sdp"
             android:layout_height="@dimen/_35sdp"
             android:layout_gravity="center_horizontal"
             android:foreground="?attr/selectableItemBackgroundBorderless"
             android:onClick="@{() -> callback.onClickSignIn()}"
-            app:cornerRadius="@dimen/_20sdp"
+            app:cornerRadius="@dimen/_5sdp"
             app:rippleColor="@color/colorPrimaryDark"
-            android:text="@string/sign_in" />
+            android:text="@string/sign_in" />-->
 
         <Space
             android:layout_width="match_parent"

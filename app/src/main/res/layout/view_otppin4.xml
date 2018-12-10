@@ -47,7 +47,7 @@
             android:text="@string/show" />
     </LinearLayout>
 
-    <com.hug.mma.widget.Pinview
+    <com.aqua.widget.Pinview
         android:id="@+id/pin_view"
         android:layout_width="wrap_content"
         android:layout_height="@dimen/_40sdp"

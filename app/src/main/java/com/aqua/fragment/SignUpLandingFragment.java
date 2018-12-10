@@ -11,6 +11,7 @@ import com.aqua.databinding.FragmentSignUpLandingBinding;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.databinding.DataBindingUtil;
+import androidx.navigation.Navigation;
 
 public class SignUpLandingFragment extends BaseFragment<FragmentSignUpLandingBinding>{
 
@@ -25,5 +26,7 @@ public class SignUpLandingFragment extends BaseFragment<FragmentSignUpLandingBin
     }
 
     private void init() {
+        binding.btnLogin.setOnClickListener(Navigation.createNavigateOnClickListener(R.id.action_login, null));
+      //  binding.btnSignUp.setOnClickListener(Navigation.createNavigateOnClickListener(R.id.action_signup, null))
     }
 }
