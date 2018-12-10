@@ -8,6 +8,8 @@ import android.os.Build;
 import android.os.Bundle;
 
 import com.aqua.constants.IntentConstants;
+import com.aqua.preference.AppPrefConstants;
+import com.aqua.preference.AppPreference;
 import com.aqua.util.AppUtil;
 import com.aqua.util.Trace;
 
@@ -43,7 +45,11 @@ public class SplashScreen extends BaseActivity {
 
     private void goNext() {
         Trace.i("nexts");
-        AppUtil.dashboard(this);
+        if (AppPreference.getInstance().getBoolean(AppPrefConstants.SIGN_IN)) {
+            AppUtil.dashboard(this);
+        } else {
+            AppUtil.signIn(this);
+        }
     }
 
 

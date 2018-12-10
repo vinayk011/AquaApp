@@ -6,6 +6,8 @@ import android.content.Intent;
 
 
 import com.aqua.activity.HomeActivity;
+import com.aqua.activity.SignActivity;
+import com.aqua.activity.SplashScreen;
 import com.aqua.preference.AppPreference;
 
 import java.util.ArrayList;
@@ -16,6 +18,12 @@ public class AppUtil {
 
     public static void dashboard(Context context) {
         Intent intent = new Intent(context, HomeActivity.class);
+        context.startActivity(intent);
+        ((Activity) context).finish();
+    }
+
+    public static void signIn(Context context) {
+        Intent intent = new Intent(context, SignActivity.class);
         context.startActivity(intent);
         ((Activity) context).finish();
     }
@@ -32,7 +40,6 @@ public class AppUtil {
     }
 
 
-
     public static List<Integer> getPowers(long n) {
         List<Integer> pwrs = new ArrayList<>();
         int power = 0;
@@ -45,4 +52,6 @@ public class AppUtil {
         }
         return pwrs;
     }
+
+
 }
