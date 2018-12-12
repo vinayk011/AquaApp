@@ -21,6 +21,8 @@
     <string name="hide">Hide</string>
     <string name="mobile_number">Mobile Number</string>
     <string name="pin">PIN</string>
+    <string name="new_pin">New PIN</string>
     <string name="cancel">Cancel</string>
     <string name="plus">+</string>
+    <string name="confirm_pin">Confirm Pin</string>
 </resources>

@@ -12,97 +12,131 @@
             type="com.aqua.bindingmodel.UserDataErrorHolder" />
     </data>
 
-    <LinearLayout
-        android:id="@+id/layout"
+    <FrameLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:clickable="true"
-        android:padding="@dimen/_10sdp"
-        android:orientation="vertical"
-        android:background="@color/colorPrimaryTextDark">
+        android:layout_height="match_parent">
 
         <ImageView
-            android:layout_width="wrap_content"
-            android:layout_height="@dimen/_80sdp"
-            android:layout_gravity="center_horizontal"
-            android:layout_margin="@dimen/_20sdp"
-            android:contentDescription="@string/sign_in_logo" />
-
-        <Space
+            android:id="@+id/img_bg"
             android:layout_width="match_parent"
-            android:layout_height="@dimen/_10sdp" />
+            android:layout_height="match_parent"
+            android:scaleType="centerCrop"/>
 
-        <com.aqua.widget.MobileNumberView
-            android:id="@+id/mobile_number"
+        <LinearLayout
+            android:id="@+id/layout"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            app:mn_hint="@string/mobile_number"
-            app:number_error="@{userDataErrorHolder.mobileError}"
-            app:number_input="@={userDataErrorHolder.mobile}" />
+            android:layout_height="match_parent"
+            android:clickable="true"
+            android:orientation="vertical"
+            android:padding="@dimen/_10sdp">
 
-        <Space
-            android:layout_width="match_parent"
-            android:layout_height="@dimen/_10sdp" />
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="@dimen/_80sdp"
+                android:layout_gravity="center_horizontal"
+                android:layout_margin="@dimen/_20sdp"
+                android:contentDescription="@string/sign_in_logo" />
 
-        <com.aqua.widget.OtpPin4View
-            android:id="@+id/otp_view"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            app:otp_error="@{userDataErrorHolder.pinError}"
-            app:otp_error_enable="@{userDataErrorHolder.pinError.get().length != 0}"
-            app:otp_hint="@string/pin"
-            app:otp_input="@={userDataErrorHolder.pin}" />
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_10sdp" />
 
-        <Space
-            android:layout_width="match_parent"
-            android:layout_height="@dimen/_20sdp" />
-
-        <FrameLayout
-            android:id="@+id/layout_login"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="@dimen/_40sdp"
-            android:layout_marginRight="@dimen/_40sdp"
-            android:layout_gravity="center_horizontal"
-            android:background="@drawable/btn_transperant">
-
-            <TextView
-                android:id="@+id/btn_login"
+            <com.aqua.widget.MobileNumberView
+                android:id="@+id/mobile_number"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:background="@drawable/ripple_effect"
-                android:clickable="true"
-                android:gravity="center"
+                app:mn_hint="@string/mobile_number"
+                app:number_error="@{userDataErrorHolder.mobileError}"
+                app:number_input="@={userDataErrorHolder.mobile}" />
+
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_10sdp" />
+
+            <com.aqua.widget.OtpPin4View
+                android:id="@+id/otp_view"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:otp_error="@{userDataErrorHolder.pinError}"
+                app:otp_error_enable="@{userDataErrorHolder.pinError.get().length != 0}"
+                app:otp_hint="@string/pin"
+                app:otp_input="@={userDataErrorHolder.pin}" />
+
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_20sdp" />
+
+            <FrameLayout
+                android:id="@+id/layout_login"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginLeft="@dimen/_40sdp"
+                android:layout_marginRight="@dimen/_40sdp"
+                android:background="@drawable/btn_transperant">
+
+                <TextView
+                    android:id="@+id/btn_login"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/ripple_effect"
+                    android:clickable="true"
+                    android:gravity="center"
+                    android:onClick="@{() -> callback.onClickSignIn()}"
+                    android:padding="@dimen/_5sdp"
+                    android:text="@string/sign_in"
+                    android:textAllCaps="false"
+                    android:textColor="@color/colorPrimaryText"
+                    android:textSize="@dimen/_15sdp" />
+            </FrameLayout>
+
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_20sdp" />
+
+            <FrameLayout
+                android:id="@+id/sign_up"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/_40sdp"
+                android:layout_marginTop="@dimen/_20sdp"
+                android:layout_marginRight="@dimen/_40sdp"
+                android:background="@drawable/btn_transperant">
+
+                <TextView
+                    android:id="@+id/btn_sign_up"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/ripple_effect"
+                    android:clickable="true"
+                    android:gravity="center"
+                    android:padding="@dimen/_5sdp"
+                    android:text="@string/signup"
+                    android:textAllCaps="false"
+                    android:textColor="@color/colorPrimaryText"
+                    android:textSize="@dimen/_15sdp" />
+            </FrameLayout>
+
+
+            <!--<com.google.android.material.button.MaterialButton
+                style="@style/button"
+                android:layout_width="@dimen/_150sdp"
+                android:layout_height="@dimen/_35sdp"
+                android:layout_gravity="center_horizontal"
+                android:foreground="?attr/selectableItemBackgroundBorderless"
                 android:onClick="@{() -> callback.onClickSignIn()}"
-                android:padding="@dimen/_10sdp"
-                android:text="@string/sign_in"
-                android:textColor="@color/colorPrimaryText"
-                android:textAllCaps="false"
-                android:textSize="@dimen/_15sdp" />
-        </FrameLayout>
+                app:cornerRadius="@dimen/_5sdp"
+                app:rippleColor="@color/colorPrimaryDark"
+                android:text="@string/sign_in" />-->
 
 
-        <!--<com.google.android.material.button.MaterialButton
-            style="@style/button"
-            android:layout_width="@dimen/_150sdp"
-            android:layout_height="@dimen/_35sdp"
-            android:layout_gravity="center_horizontal"
-            android:foreground="?attr/selectableItemBackgroundBorderless"
-            android:onClick="@{() -> callback.onClickSignIn()}"
-            app:cornerRadius="@dimen/_5sdp"
-            app:rippleColor="@color/colorPrimaryDark"
-            android:text="@string/sign_in" />-->
-
-        <Space
-            android:layout_width="match_parent"
-            android:layout_height="@dimen/_20sdp" />
-
-        <!--<Button
-            style="@style/border_less_button_normal"
-            android:layout_width="@dimen/_150sdp"
-            android:layout_height="@dimen/_35sdp"
-            android:layout_gravity="center_horizontal"
-            android:onClick="@{() -> callback.onClickForgotPin()}"
-            android:text="@string/forgot_pin" />-->
-    </LinearLayout>
+            <!--<Button
+                style="@style/border_less_button_normal"
+                android:layout_width="@dimen/_150sdp"
+                android:layout_height="@dimen/_35sdp"
+                android:layout_gravity="center_horizontal"
+                android:onClick="@{() -> callback.onClickForgotPin()}"
+                android:text="@string/forgot_pin" />-->
+        </LinearLayout>
+    </FrameLayout>
 </layout>

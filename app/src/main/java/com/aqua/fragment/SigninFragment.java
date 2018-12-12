@@ -10,12 +10,15 @@ import com.aqua.R;
 import com.aqua.bindingmodel.UserDataErrorHolder;
 import com.aqua.databinding.FragmentSigninBinding;
 import com.aqua.listener.SignInListener;
+import com.aqua.util.ImageUtil;
 import com.aqua.widget.Pinview;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.databinding.DataBindingUtil;
 import androidx.lifecycle.Observer;
+import androidx.navigation.Navigation;
+import androidx.navigation.ui.NavigationUI;
 
 public class SigninFragment extends BaseFragment<FragmentSigninBinding> {
 
@@ -34,6 +37,8 @@ public class SigninFragment extends BaseFragment<FragmentSigninBinding> {
                 signInListener.onClickSignIn();
             }
         });
+        binding.btnSignUp.setOnClickListener(Navigation.createNavigateOnClickListener(R.id.action_signup, null));
+        binding.imgBg.setImageBitmap(ImageUtil.decodeSampledBitmapFromResource(getResources(), R.drawable.ic_shrimp, 200, 400));
         observeClick(binding.getRoot());
         return binding.getRoot();
     }
